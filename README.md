@@ -299,7 +299,7 @@ This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.t
 For questions, feedback, or collaboration:
 
 - **Email**: atharvkhare18@gmail.com
-- **Portfolio**: [atharvk4u.vercel.app](https://atharvk4u.vercel.app)
+- **Portfolio**: [atharvk.me](https://atharvk4u.vercel.app)
 - **GitHub**: [@1mystic](https://github.com/1mystic)
 
 ---
