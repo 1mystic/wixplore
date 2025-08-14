@@ -8,7 +8,7 @@
 
 **Wixplore** is a modern web application that combines cultural exploration with intelligent data processing. The platform features Vue 3 frontend with Node.js serverless functions and Python AI agents for advanced data analysis.
 
-## ✨ Key Features
+##  Key Features
 
 - **Cultural Exploration** - Interactive quizzes and cultural content discovery
 - **Data Upload & Processing** - Upload datasets for AI-powered analysis
@@ -19,7 +19,7 @@
 - **Serverless Architecture** - Optimized for Vercel deployment
 - **Modern UI** - Clean, responsive interface built with Vue 3
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 /project-root
@@ -60,7 +60,7 @@
 └── /data                     # Temporary file storage
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 - **Vue 3** - Progressive JavaScript framework
@@ -122,7 +122,7 @@
    - **API Health**: http://localhost:5000/api/health
    - **Agent Tester**: http://localhost:8081 (after starting `cd agent-tester && python3 -m http.server 8081`)
 
-## 📡 API Documentation
+## API Documentation
 
 ### File Upload Endpoints
 - `POST /api/upload` - Upload dataset files (CSV, JSON, TXT, XLSX)
@@ -146,7 +146,7 @@
 }
 ```
 
-## 🤖 AI Agents
+## Agents
 
 ### Data Cleaner (`agent_cleaner.py`)
 - Removes duplicates and handles missing values
@@ -168,7 +168,7 @@
 - Analyzes cultural context and text patterns
 - Provides multilingual data insights
 
-## 🧪 Agent Tester
+## Agent Tester
 
 A standalone web interface for testing AI agents without running the full application:
 
@@ -184,7 +184,7 @@ Features:
 - Beautiful results formatting
 - Sample multilingual data included
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -217,7 +217,7 @@ The `vercel.json` configuration handles:
 - API routes as serverless functions
 - Proper routing between frontend and API
 
-## 🧪 Testing
+## Testing
 
 ```bash
 # Frontend tests
@@ -233,17 +233,41 @@ cd agents && python -m pytest
 npm run test:e2e
 ```
 
-## 📊 Screenshots
+## Screenshots
 
-| Landing Page | Quiz Interface | AI Data Analysis |
-|-------------|----------------|------------------|
-| ![Landing](./screenshots/land.png) | ![Quiz](./screenshots/quiz.png) | ![AI Report](./screenshots/aireport.png) |
+Here are some screenshots of the application:
 
-| User Dashboard | Admin Panel | Profile Management |
-|---------------|-------------|-------------------|
-| ![Dashboard](./screenshots/userdash.png) | ![Admin](./screenshots/admindash.png) | ![Profile](./screenshots/profile.png) |
+### User Dashboard
+![User Dashboard](screenshots/userdash.png)
 
-## 📈 Performance Features
+### AI Report
+![AI Report](screenshots/aireport.png)
+
+### Landing Page
+![Landing Page](screenshots/land.png)
+
+### Login Page
+![Login Page](screenshots/login.png)
+
+### User Profile
+![User Profile](screenshots/profile.png)
+
+### Quiz Page
+![Quiz Page](screenshots/quiz.png)
+
+### Summary Page
+![Summary Page](screenshots/summary.png)
+
+### AI Feedback
+![AI Feedback](screenshots/feedback.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admindash.png)
+
+### Admin Panel
+![Admin Panel](screenshots/adminp.png)
+
+## Performance Features
 
 - **Frontend**: Optimized Vue 3 with Vite for fast Hot Module Replacement
 - **API**: Serverless functions with automatic scaling
@@ -251,7 +275,7 @@ npm run test:e2e
 - **Deployment**: Global CDN distribution via Vercel
 - **Caching**: Redis-based caching for improved response times
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create feature branch (`git checkout -b feature/amazing-feature`)
@@ -259,18 +283,18 @@ npm run test:e2e
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
 
-## 📞 Support & Documentation
+## Support & Documentation
 
 - **API Documentation**: See `api_documentation.yaml` for complete OpenAPI spec
 - **Testing Guide**: Check `API_TESTING_GUIDE.md` for comprehensive testing instructions
 - **Postman Collection**: Import `wixplore_postman_collection.json` for API testing
 - **Migration Notes**: Review `MIGRATION_SUMMARY.md` for architecture details
 
-## 📧 Contact
+## Contact
 
 For questions, feedback, or collaboration:
 
