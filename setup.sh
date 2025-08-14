@@ -2,10 +2,10 @@
 
 # Development setup script for wixplore refactored app
 
-echo "🚀 Setting up wixplore development environment..."
+echo " Setting up wixplore development environment..."
 
 # Install frontend dependencies
-echo "📦 Installing frontend dependencies..."
+echo " Installing frontend dependencies..."
 cd frontend && npm install
 if [ $? -ne 0 ]; then
     echo "❌ Frontend dependency installation failed"

@@ -2,7 +2,7 @@
 
 # Development runner script for wixplore refactored app
 
-echo "🚀 Starting wixplore development servers..."
+echo " Starting wixplore development servers..."
 
 # Function to cleanup background processes
 cleanup() {
@@ -16,7 +16,7 @@ cleanup() {
 trap cleanup INT
 
 # Start API server in background
-echo "🔧 Starting Node.js API server on port 5000..."
+echo " Starting Node.js API server on port 5000..."
 cd api && npm run dev &
 API_PID=$!
 
@@ -24,12 +24,12 @@ API_PID=$!
 sleep 2
 
 # Start frontend server in background
-echo "🎨 Starting Vue frontend on port 3000..."
+echo " Starting Vue frontend on port 3000..."
 cd ../frontend && npm run dev &
 FRONTEND_PID=$!
 
 echo ""
-echo "✅ Development servers started!"
+echo " Development servers started!"
 echo "   Frontend: http://localhost:3000"
 echo "   API:      http://localhost:5000"
 echo ""

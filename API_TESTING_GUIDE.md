@@ -1,6 +1,6 @@
-# 📡 Wixplore API Documentation & Testing Guide
+#  Wixplore API Documentation & Testing Guide
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Import into Postman
 1. Download `wixplore_postman_collection.json`
