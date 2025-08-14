@@ -72,6 +72,7 @@ class User(DBase):
             return None  # Token expired
         except jwt.InvalidTokenError:
             return None  # Invalid token
+        # ...add more fields as needed...
 
 class Badge(db.Model):
     __tablename__ = 'badges'
@@ -157,6 +158,7 @@ class Quiz(DBase):
     questions = db.relationship('Question', backref='quiz', lazy=True, cascade="all, delete-orphan")
     scores = db.relationship('Score', backref='quiz', lazy=True, cascade="all, delete-orphan")
     release_at = db.Column(db.DateTime, nullable=True)
+        # ...add more fields as needed...
 
 class Question(DBase):
     __tablename__ = 'questions'

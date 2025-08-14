@@ -1,0 +1,14 @@
+# Data Directory
+
+This directory stores temporary uploaded files for processing by AI agents.
+
+Files uploaded here are automatically processed and then can be cleaned up periodically.
+
+## File Types Supported
+- CSV files (.csv)
+- JSON files (.json) 
+- Excel files (.xlsx, .xls)
+- Text files (.txt)
+
+## Security Note
+This directory should not be committed to version control as it may contain sensitive user data.

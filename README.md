@@ -1,33 +1,265 @@
-# Whiz.it - The Intelligent Quiz Master
+# Wixplore - Cultural Data Intelligence Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
-![Flask](https://img.shields.io/badge/Flask-%E2%98%AB%EF%B8%8F%202.x-brightgreen.svg)
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.x-success.svg)
-![Redis](https://img.shields.io/badge/Redis-brightred.svg)
-![Celery](https://img.shields.io/badge/Celery-orange.svg)
+![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)
+![Python](https://img.shields.io/badge/Python-3.x-blue.svg)
+![Vercel](https://img.shields.io/badge/Vercel-Ready-black.svg)
 
-**Whiz.it** is a modern, fresh, and minimalist quiz master application designed to provide an engaging and insightful learning experience. Users can test their knowledge across various subjects and chapters, benefit from instant AI-powered feedback, track their progress, and engage with a comprehensive set of features to enhance their learning journey.
+**Wixplore** is a modern web application that combines cultural exploration with intelligent data processing. The platform features Vue 3 frontend with Node.js serverless functions and Python AI agents for advanced data analysis.
 
 ## ✨ Key Features
 
-* **Diverse Quizzes:** Attempt quizzes organized by subjects and chapters.
-* **Bookmarks:** Save questions for later review.
-* **Score Revisits:** Access and analyze past quiz scores.
-* **Instant AI Feedback:** Receive immediate, intelligent feedback on answers powered by Google Generative AI.
-* **Score History:** Track the evolution of your performance over time.
-* **User Profiles:** Personalized profiles with a leaderboard to foster healthy competition.
-* **Dedicated Summary Page:** A consolidated view of your quiz activity and progress.
-* **Report Generation:** Options to download and email detailed quiz reports.
-* **Daily Reminders:** Stay on track with daily quiz reminders delivered via email.
-* **Monthly Activity Reports:** Gain insights into your monthly learning activity through comprehensive email reports.
-* **AI-Powered Analysis Page:** Delve deeper into your strengths and weaknesses with intelligent analysis powered by AI.
-* **Admin Panel (RBAC):** A robust administration interface with Role-Based Access Control (RBAC) for platform management.
-* **Modern UI:** A clean and minimalist user interface built with Vue 3 Options API.
+* **Cultural Exploration:** Interactive quizzes and cultural content
+* **Data Upload & Processing:** Upload datasets for AI-powered analysis
+* **Intelligent Agents:** Python-powered data cleaning, profiling, and reasoning
+* **Language Extraction:** Advanced text analysis and language detection
+* **User Profiles:** Personalized learning experiences
+* **Real-time Analytics:** Live data insights and visualizations
+* **Serverless Architecture:** Optimized for Vercel deployment
+* **Modern UI:** Clean, responsive interface built with Vue 3
 
-## 🛠️ Built With
+## 🏗️ Architecture
 
-* **Backend:**
+```
+/project-root
+│── package.json              # Root package for workspace management
+│── vercel.json               # Vercel deployment configuration
+│── setup.sh                 # Development setup script
+│── dev.sh                   # Development runner script
+│
+│── /frontend                 # Vue 3 Application
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── src/
+│   │   ├── components/       # Vue components
+│   │   ├── views/           # Page components
+│   │   ├── router/          # Vue Router configuration
+│   │   ├── store/           # Vuex store
+│   │   └── services/        # API services
+│   └── public/              # Static assets
+│
+│── /api                      # Node.js Serverless Functions
+│   ├── index.js             # Main Express server
+│   ├── upload.js            # File upload handling
+│   ├── process-data.js      # Python agent orchestration
+│   └── package.json
+│
+│── /agents                   # Python AI Agents
+│   ├── agent_cleaner.py     # Data cleaning agent
+│   ├── agent_profiler.py    # Data profiling agent
+│   ├── agent_reasoner.py    # Data reasoning agent
+│   ├── langextract_agent.py # Language extraction agent
+│   └── requirements.txt
+│
+└── /data                     # Temporary file storage
+```
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Vue 3** - Progressive JavaScript framework
+- **Vue Router 4** - Official router for Vue.js
+- **Vuex 4** - State management pattern
+- **Vite** - Fast build tool and dev server
+- **Bootstrap 5** - CSS framework
+- **Chart.js** - Data visualization
+
+### Backend
+- **Node.js** - JavaScript runtime
+- **Express** - Web application framework
+- **Multer** - File upload middleware
+- **Axios** - HTTP client library
+
+### AI Agents
+- **Python 3** - Programming language
+- **Pandas** - Data manipulation library
+- **NumPy** - Numerical computing
+- **Scikit-learn** - Machine learning library
+
+### Deployment
+- **Vercel** - Serverless hosting platform
+- **Git** - Version control
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+ and npm
+- Python 3.8+
+- Git
+
+### Development Setup
+
+1. **Clone and setup:**
+   ```bash
+   git clone <your-repo-url>
+   cd wixplore
+   chmod +x setup.sh dev.sh
+   ./setup.sh
+   ```
+
+2. **Start development servers:**
+   ```bash
+   ./dev.sh
+   ```
+
+   Or manually:
+   ```bash
+   # Terminal 1: Frontend (port 3000)
+   npm run dev:frontend
+   
+   # Terminal 2: API (port 5000) 
+   npm run dev:api
+   ```
+
+3. **Access the application:**
+   - Frontend: http://localhost:3000
+   - API: http://localhost:5000/api/health
+
+### Production Deployment
+
+**Deploy to Vercel:**
+```bash
+npm install -g vercel
+vercel --prod
+```
+
+The application will be deployed with:
+- Frontend served as static site
+- API endpoints as serverless functions
+- Automatic CI/CD from Git repository
+
+## 📡 API Endpoints
+
+### File Upload
+- `POST /api/upload` - Upload dataset files
+- `GET /api/upload/files` - List uploaded files
+- `DELETE /api/upload/files/:filename` - Delete file
+
+### AI Agents
+- `POST /api/agents/run` - Execute Python agents
+- `GET /api/agents/list` - Get available agents
+- `GET /api/agents/status/:jobId` - Check processing status
+
+### Health & Info
+- `GET /api/health` - API health check
+
+## 🤖 AI Agents
+
+### Data Cleaner (`agent_cleaner.py`)
+- Removes duplicates and handles missing values
+- Normalizes text data
+- Provides cleaning statistics
+
+### Data Profiler (`agent_profiler.py`)
+- Analyzes data structure and quality
+- Generates comprehensive data profiles
+- Calculates data quality scores
+
+### Data Reasoner (`agent_reasoner.py`)
+- Provides intelligent insights about data
+- Detects patterns and anomalies
+- Generates business recommendations
+
+### Language Extractor (`langextract_agent.py`)
+- Extracts text features and patterns
+- Detects languages and cultural context
+- Analyzes linguistic characteristics
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create `.env` file (use `.env.example` as template):
+
+```bash
+# Frontend
+VITE_API_URL=http://localhost:5000/api
+
+# API
+PORT=5000
+FRONTEND_ORIGIN=http://localhost:3000
+
+# Python Agents
+PYTHON_PATH=python3
+MAX_FILE_SIZE=10485760
+UPLOAD_DIR=./data
+```
+
+### Vercel Configuration
+
+The `vercel.json` file configures:
+- Frontend build from `/frontend`
+- API routes as serverless functions
+- Proper routing between frontend and API
+
+## 📁 File Structure Details
+
+### Frontend Structure
+```
+frontend/src/
+├── components/           # Reusable Vue components
+│   ├── CulturalContext.vue
+│   └── DataLab/
+├── views/               # Page components
+│   ├── admin/           # Admin interface
+│   └── user/            # User interface
+├── router/              # Vue Router setup
+├── store/               # Vuex state management
+└── services/            # API interaction layer
+```
+
+### API Structure
+```
+api/
+├── index.js             # Express app setup and routing
+├── upload.js            # File upload handling with multer
+├── process-data.js      # Python agent execution
+└── package.json         # Node.js dependencies
+```
+
+## 🧪 Testing
+
+```bash
+# Frontend tests
+cd frontend && npm test
+
+# API tests
+cd api && npm test
+
+# Python agent tests
+cd agents && python -m pytest
+```
+
+## 📈 Performance
+
+- **Frontend:** Optimized Vue 3 with Vite for fast HMR
+- **API:** Serverless functions with automatic scaling
+- **Agents:** Efficient Python data processing
+- **Deployment:** Global CDN via Vercel
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details.
+
+## 📞 Support
+
+For support and questions:
+- Create an issue on GitHub
+- Check the documentation in `/docs`
+- Review the API documentation in `api_docs.yaml`
+
+---
+
+**Built with ❤️ for cultural exploration and data intelligence**
     * [Python](https://www.python.org/)
     * [Flask](https://flask.palletsprojects.com/) - A microframework for Python based on Werkzeug, Jinja 2 and good intentions.
     * [Celery](https://docs.celeryq.dev/) - A distributed task queue.

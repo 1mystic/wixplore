@@ -1,12 +1,30 @@
-# env file
+# Environment variables
 .env
+.env.local
+.env.production
 
-# other files
+# Dependencies
+node_modules/
+*/node_modules/
+frontend/node_modules/
+api/node_modules/
+
+# Build outputs
+*/dist/
+*/build/
+frontend/dist/
+
+# Data files (temporary uploads)
+data/*
+!data/.gitkeep
+
+# Legacy files
 ai_test.py
 dump.rdb 
 ToDo.txt
-serverA/venv
+serverA/
 
+# Legacy frontend build
 new_demo/Client_CDN/vuefrontend/node_modules
 new_demo/Client_CDN/vuefrontend/dist
 # Byte-compiled / optimized / DLL files

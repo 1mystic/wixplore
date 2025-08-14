@@ -1,0 +1,24 @@
+{
+  "name": "wixplore-refactored",
+  "version": "1.0.0",
+  "description": "Vue 3 + Node.js serverless web app for cultural exploration",
+  "scripts": {
+    "dev": "./dev.sh",
+    "setup": "./setup.sh",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:api": "cd api && npm run dev",
+    "install:frontend": "cd frontend && npm install",
+    "install:api": "cd api && npm install",
+    "install:agents": "cd agents && pip3 install -r requirements.txt",
+    "vercel-build": "cd frontend && npm run build"
+  },
+  "keywords": ["vue", "nodejs", "serverless", "vercel", "ai", "data-analysis"],
+  "author": "",
+  "license": "MIT",
+  "workspaces": [
+    "frontend",
+    "api"
+  ]
+}

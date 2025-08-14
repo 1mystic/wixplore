@@ -1,4 +1,15 @@
-from datetime import datetime, timedelta
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+class Config:
+    SECRET_KEY = os.getenv('SECRET_KEY', 'dev')
+    SQLALCHEMY_DATABASE_URI = os.getenv('SQLALCHEMY_DATABASE_URI', 'sqlite:///instance/quizmdb.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    FRONTEND_ORIGIN = os.getenv('FRONTEND_ORIGIN', '*')
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
+    GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY', '')
+    HUGGINGFACE_API_KEY = os.getenv('HUGGINGFACE_API_KEY', '')from datetime import datetime, timedelta
 import os
 from dotenv import load_dotenv
 load_dotenv()

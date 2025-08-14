@@ -1,0 +1,211 @@
+{
+  "info": {
+    "name": "Wixplore Cultural Data Intelligence API",
+    "description": "Complete API collection for Wixplore platform with AI-powered data analysis agents",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000",
+      "type": "string"
+    },
+    {
+      "key": "uploadedFileName",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "health"]
+        },
+        "description": "Check if the API is running and responsive"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Upload Sample CSV",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Store uploaded filename for other requests",
+              "if (pm.response.code === 200) {",
+              "    var jsonData = pm.response.json();",
+              "    pm.collectionVariables.set('uploadedFileName', jsonData.file.filename);",
+              "    console.log('Uploaded file: ' + jsonData.file.filename);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "dataset",
+              "type": "file",
+              "src": [],
+              "description": "Upload a CSV file. Create sample with headers: name,age,country,language"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/upload",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "upload"]
+        },
+        "description": "Upload a dataset file for processing. Create a sample CSV:\n\nname,age,country,language\nAlice,25,USA,English\nBob,30,France,French\nCharlie,28,Germany,German"
+      },
+      "response": []
+    },
+    {
+      "name": "3. List Available Agents",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/agents/list",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "agents", "list"]
+        },
+        "description": "Get list of all available AI agents"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Data Cleaner Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filename\": \"{{uploadedFileName}}\",\n  \"agentType\": \"cleaner\",\n  \"parameters\": {\n    \"remove_duplicates\": true,\n    \"handle_missing\": \"drop\",\n    \"normalize_text\": true\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/agents/run",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "agents", "run"]
+        },
+        "description": "Execute data cleaner agent to clean and preprocess data"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Data Profiler Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filename\": \"{{uploadedFileName}}\",\n  \"agentType\": \"profiler\",\n  \"parameters\": {\n    \"include_correlations\": true,\n    \"include_distributions\": true\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/agents/run",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "agents", "run"]
+        },
+        "description": "Execute data profiler agent to analyze data structure and quality"
+      },
+      "response": []
+    },
+    {
+      "name": "6. Data Reasoner Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filename\": \"{{uploadedFileName}}\",\n  \"agentType\": \"reasoner\",\n  \"parameters\": {\n    \"include_patterns\": true,\n    \"include_anomalies\": true,\n    \"max_insights\": 10\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/agents/run",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "agents", "run"]
+        },
+        "description": "Execute data reasoner agent for intelligent insights and patterns"
+      },
+      "response": []
+    },
+    {
+      "name": "7. Language Extractor Agent",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"filename\": \"{{uploadedFileName}}\",\n  \"agentType\": \"langextract\",\n  \"parameters\": {\n    \"detect_languages\": true,\n    \"extract_keywords\": true,\n    \"max_keywords\": 50\n  }\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/agents/run",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "agents", "run"]
+        },
+        "description": "Execute language extractor agent to analyze text and detect languages"
+      },
+      "response": []
+    },
+    {
+      "name": "8. List Uploaded Files",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/upload/files",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "upload", "files"]
+        },
+        "description": "Get list of all uploaded files with metadata"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Ensure base URL is set",
+          "if (!pm.collectionVariables.get('baseUrl')) {",
+          "    pm.collectionVariables.set('baseUrl', 'http://localhost:5000');",
+          "}"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Python dependencies for AI agents
+pandas>=1.5.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Optional: For advanced language processing
+# nltk>=3.8
+# spacy>=3.6.0
+# transformers>=4.30.0
+
+# Optional: For AI/ML capabilities
+# openai>=0.27.0
+# anthropic>=0.3.0
