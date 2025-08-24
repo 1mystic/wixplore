@@ -1,4 +1,6 @@
-# Wixplore - Cultural Data Intelligence Platform
+# Wixplore - Cultural Data Intelligence Platform (whiz.it - v2)
+
+[![ALT TEXT](https://img.youtube.com/vi/TfYUGgWR7j4/maxresdefault.jpg)](https://www.youtube.com/watch?v=TfYUGgWR7j4)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.x-success.svg)
